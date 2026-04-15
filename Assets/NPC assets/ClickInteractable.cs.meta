@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 7b80c371e1acc6348ab945fa9fb91b1a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerCam: {instanceID: 0}
+  - DialogueBox: {fileID: 790152489021686409, guid: 4bec2ef5b754b444d8e2aedc3877351d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

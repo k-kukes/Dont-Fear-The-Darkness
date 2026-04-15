@@ -329,7 +329,8 @@ Library/PackageCache/
  com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll
  com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll
  com.unity.testtools.codecoverage@e4e5058206c0/lib/ReportGenerator/ReportGeneratorMerged.dll
-Library/ScriptAssemblies/
+Temp/bin/Debug/
+ Assembly-CSharp.dll
  PPv2URPConverters.dll
  Unity.AI.Navigation.dll
  Unity.AI.Navigation.Editor.ConversionSystem.dll
@@ -372,6 +373,8 @@ Library/ScriptAssemblies/
  Unity.ShaderGraph.Editor.dll
  Unity.Splines.dll
  Unity.Splines.Editor.dll
+ Unity.TerrainTools.dll
+ Unity.TerrainTools.Editor.dll
  Unity.TestTools.CodeCoverage.Editor.dll
  Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
  Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
@@ -382,12 +385,9 @@ Library/ScriptAssemblies/
  Unity.UnifiedRayTracing.Runtime.dll
  Unity.VisualStudio.Editor.dll
  Unity.VSCode.Editor.dll
- UnityEditor.TestRunner.dll
  UnityEditor.UI.Analytics.dll
  UnityEditor.UI.dll
- UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
-Temp/bin/Debug/Assembly-CSharp.dll
 
 [analyzerReferences]
 ../../../../../Program Files/Unity/Hub/Editor/6000.3.5f2/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/

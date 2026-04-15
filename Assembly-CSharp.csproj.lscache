@@ -48,6 +48,7 @@ Assets/NPC assets/
  DialogueManager.cs
  NewPunch/ShirtlessZombieFree/Scripts/FreeZombie_EyesGlow.cs
 Assets/Scripts/
+ InteractableObject.cs
  PlayerController.cs
  PlayerRelated/
   BatteryPickup.cs
@@ -167,6 +168,7 @@ obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttributes.cs
  UnityEngine.AccessibilityModule.dll
  UnityEngine.AdaptivePerformanceModule.dll
  UnityEngine.AIModule.dll
+ UnityEngine.AMDModule.dll
  UnityEngine.AndroidJNIModule.dll
  UnityEngine.AnimationModule.dll
  UnityEngine.ARModule.dll
@@ -186,6 +188,7 @@ obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttributes.cs
  UnityEngine.GraphicsStateCollectionSerializerModule.dll
  UnityEngine.GridModule.dll
  UnityEngine.HierarchyCoreModule.dll
+ UnityEngine.HierarchyModule.dll
  UnityEngine.HotReloadModule.dll
  UnityEngine.IdentifiersModule.dll
  UnityEngine.ImageConversionModule.dll
@@ -198,6 +201,7 @@ obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttributes.cs
  UnityEngine.LocalizationModule.dll
  UnityEngine.MarshallingModule.dll
  UnityEngine.MultiplayerModule.dll
+ UnityEngine.NVIDIAModule.dll
  UnityEngine.ParticleSystemModule.dll
  UnityEngine.PerformanceReportingModule.dll
  UnityEngine.Physics2DModule.dll
@@ -377,7 +381,7 @@ Library/PackageCache/
  com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll
  com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll
  com.unity.testtools.codecoverage@e4e5058206c0/lib/ReportGenerator/ReportGeneratorMerged.dll
-Library/ScriptAssemblies/
+Temp/bin/Debug/
  PPv2URPConverters.dll
  Unity.AI.Navigation.dll
  Unity.AI.Navigation.Editor.ConversionSystem.dll
@@ -420,6 +424,8 @@ Library/ScriptAssemblies/
  Unity.ShaderGraph.Editor.dll
  Unity.Splines.dll
  Unity.Splines.Editor.dll
+ Unity.TerrainTools.dll
+ Unity.TerrainTools.Editor.dll
  Unity.TestTools.CodeCoverage.Editor.dll
  Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
  Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll

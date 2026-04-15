@@ -93,3 +93,10 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168396
+  packageName: 'Environment Pack: Free Forest Sample'
+  packageVersion: 2.0.1
+  assetPath: Assets/Free Forest Sample/Models/Tree/Leaf/forestpack_tree_1_leaf_1_meshCollider.FBX
+  uploadId: 697266

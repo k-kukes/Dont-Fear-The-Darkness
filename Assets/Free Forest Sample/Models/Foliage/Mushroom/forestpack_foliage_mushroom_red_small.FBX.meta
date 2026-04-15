@@ -95,3 +95,10 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168396
+  packageName: 'Environment Pack: Free Forest Sample'
+  packageVersion: 2.0.1
+  assetPath: Assets/Free Forest Sample/Models/Foliage/Mushroom/forestpack_foliage_mushroom_red_small.FBX
+  uploadId: 697266

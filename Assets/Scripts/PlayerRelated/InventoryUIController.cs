@@ -18,8 +18,13 @@ public class InventoryUIController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (inventoryPanel != null)
+            if (inventoryPanel != null){
                 inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+                if (inventoryPanel.activeSelf && batteryText != null && inventory != null)
+                {
+                    batteryText.text = "Batteries: " + inventory.batteryCount;
+                }
+            }
             Debug.Log("Inventory toggled");
         }
 

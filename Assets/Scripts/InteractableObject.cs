@@ -14,6 +14,7 @@ public class InteractableObject : MonoBehaviour
 
         if (player == null)
         {
+            // please.....
             player = Camera.main.transform;
         }
     }

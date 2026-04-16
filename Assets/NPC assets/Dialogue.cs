@@ -15,6 +15,8 @@ public class Dialogue : MonoBehaviour
     public List<string> lines;
     private int index;
 
+    public GameObject OptionsMenu;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -80,6 +82,7 @@ public class Dialogue : MonoBehaviour
         if (index > lines.ToArray().Length - 1)
         {
             this.gameObject.SetActive(false);
+            OptionsMenu.SetActive(true);
         }
 
     }

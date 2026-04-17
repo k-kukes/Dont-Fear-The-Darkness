@@ -3,16 +3,15 @@ using TMPro;
 using System.Collections;
 using System;
 using System.Collections.Generic;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
+using UnityEngine.UI;
 
 
 public class Dialogue : MonoBehaviour
 {
-
-    public TextMeshProUGUI text;
+    public Text text;
     public float speed;
 
-    public List<string> lines;
+    public string[] lines;
     private int index;
 
     public GameObject OptionsMenu;
@@ -20,6 +19,8 @@ public class Dialogue : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        text.text = "working";
 
     }
 
@@ -32,7 +33,7 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
         Debug.Log(index);
-        Debug.Log(index <= lines.ToArray().Length - 1);
+        Debug.Log(index <= lines.Length - 1);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -72,14 +73,14 @@ public class Dialogue : MonoBehaviour
 
     void nextLine()
     {
-        if (index <= lines.ToArray().Length - 1)
+        if (index <= lines.Length - 1)
         {
             index++;
             text.text = String.Empty;
             StartCoroutine(TypeLine());
         }
 
-        if (index > lines.ToArray().Length - 1)
+        if (index > lines.Length - 1)
         {
             this.gameObject.SetActive(false);
             OptionsMenu.SetActive(true);
@@ -89,13 +90,12 @@ public class Dialogue : MonoBehaviour
 
     void OnEnable()
     {
-        lines = DialogueManager.dialogue;
         text.text = String.Empty;
         StartDialogue();
     }
 
     void OnDisable()
     {
-        lines.Clear();
+        lines = null;
     }
 }

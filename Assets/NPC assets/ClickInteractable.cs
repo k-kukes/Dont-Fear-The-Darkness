@@ -1,14 +1,13 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Mono.Cecil;
 public class ClickInteractable : MonoBehaviour
 {
     public Camera playerCam;
-
+    public GameObject OptionsMenu;
     public GameObject DialogueBox;
-    
-    public GameObject ChoiceMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,42 +29,18 @@ public class ClickInteractable : MonoBehaviour
             bool hit = Physics.Raycast(ray, out raycastHit);
 
 
+
             if (hit)
             {
-                if (raycastHit.transform.name.Equals("Body_Parts"))
+                string[] dialogue = DialogueManager.setDialogue(raycastHit.transform.name);
+                if (dialogue != null)
                 {
-
+                    ResourceManager.currentObject = raycastHit.transform.gameObject;
                     DialogueBox.SetActive(true);
-                    DialogueBox.GetComponent<Dialogue>().lines.Clear();
-                    DialogueBox.GetComponent<Dialogue>().lines.Add("??????");
-                    DialogueBox.GetComponent<Dialogue>().lines.Add("is That HUMAN");
-                    
-                    
+                    DialogueBox.GetComponent<Dialogue>().lines = dialogue;
                 }
-                if (raycastHit.transform.name.Equals("rust_key"))
-                {
-
-                    DialogueBox.SetActive(true);
-                    DialogueBox.GetComponent<Dialogue>().lines.Clear();
-                    DialogueBox.GetComponent<Dialogue>().lines.Add("Hmmmmm");
-                    DialogueBox.GetComponent<Dialogue>().lines.Add("This might be useful");
-                }
-
-                if (raycastHit.transform.name.Equals("food"))
-                {
-
-                    DialogueBox.SetActive(true);
-                    DialogueBox.GetComponent<Dialogue>().lines.Clear();
-                    DialogueBox.GetComponent<Dialogue>().lines.Add("Finaly");
-                    DialogueBox.GetComponent<Dialogue>().lines.Add("Something I can Eat");
-                }
-                Debug.Log("HIT");
-                Debug.Log(raycastHit.transform.name);
             }
-            else
-            {
-                Debug.Log("miss");
-            }
+
         }
     }
 

@@ -20,10 +20,27 @@ public class MenuOptions : MonoBehaviour
         menu.SetActive(false);
     }
 
-    public void loseSanity()
+    public void Eat()
     {
-        ResourceManager.reduceSanity(5);
-        Debug.Log(ResourceManager.Sanity);
+        if (ResourceManager.isFood)
+        {
+            ResourceManager.increaseSanity(5);
+            menu.SetActive(false);
+        }
+        else
+        {
+            ResourceManager.reduceSanity(5);
+            menu.SetActive(false);
+        }
+        ResourceManager.currentObject.SetActive(false);
+
+    }
+
+
+    public void PickUp()
+    {
+        //add pick up logic
+        menu.SetActive(false);
     }
 
 }

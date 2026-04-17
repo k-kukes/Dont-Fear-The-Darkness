@@ -718,7 +718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 95, y: -82}
+  m_AnchoredPosition: {x: 5, y: -74}
   m_SizeDelta: {x: 398.4526, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020463776
@@ -744,14 +744,14 @@ MonoBehaviour:
   m_text: Don't Fear the Darkness
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
-  m_sharedMaterial: {fileID: 256719968147355859, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
+  m_sharedMaterial: {fileID: 6284482140015237325, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290559164
-  m_fontColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+    rgba: 4283396516
+  m_fontColor: {r: 0.6415094, g: 0.4446516, b: 0.31167677, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -768,15 +768,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1

@@ -5,8 +5,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth = 100f;
-    public Image bloodOverlay;
     public float maxRedAlpha = 0.7f;
+    
+    public CanvasGroup bloodOverlayGroup; 
 
     void Update()
     {
@@ -25,13 +26,8 @@ public class PlayerHealth : MonoBehaviour
     void ApplyVisuals()
     {
         float hurtFactor = 1f - (currentHealth / maxHealth);
-
-        if (hurtFactor > 0.35f)
-        {
-            float alpha = (hurtFactor - 0.35f) / 0.65f * maxRedAlpha;
-            bloodOverlay.color = new Color(1,0,0, alpha);
-        } else {
-            bloodOverlay.color = new Color(1,0,0,0.8f);
-        }
+        
+        float targetAlpha = Mathf.InverseLerp(0.35f, 1f, hurtFactor) * maxRedAlpha;
+        bloodOverlayGroup.alpha = targetAlpha;
     }
 }

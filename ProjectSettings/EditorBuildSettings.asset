@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 40937bfec6c2a2f449f5c86ab81a9464
+  - enabled: 1
+    path: Assets/Scenes/MoodyNight.unity
+    guid: df158d4fec0503e4ebf0b3d8164a07be
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

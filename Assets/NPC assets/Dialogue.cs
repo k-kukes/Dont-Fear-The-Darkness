@@ -83,7 +83,15 @@ public class Dialogue : MonoBehaviour
         if (index > lines.Length - 1)
         {
             this.gameObject.SetActive(false);
-            OptionsMenu.SetActive(true);
+            if (!ResourceManager.currentObject.transform.name.Equals("MonsterMutant2"))
+            {
+                OptionsMenu.SetActive(true);
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
         }
 
     }

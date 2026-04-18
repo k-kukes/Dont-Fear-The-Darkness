@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5898864295711336049
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_Name
+      value: Base mesh MonsterMutant7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 47.13517
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.8066995
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32.7299
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8443826827625469006}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6075480349244991957}
+    - targetCorrespondingSourceObject: {fileID: 100344, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4641269598726034412}
+  m_SourcePrefab: {fileID: 100100000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+--- !u!1 &5898864295711236305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+  m_PrefabInstance: {fileID: 5898864295711336049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &8443826827625469006
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898864295711236305}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &6075480349244991957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898864295711236305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2ed81713e9cc640945df3bffa8ce8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  target: {fileID: 0}
+  updateSpeed: 0
+--- !u!1 &5898864295711236489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100344, guid: e1af740f30dfdb14a9cbcc62f6e78120, type: 3}
+  m_PrefabInstance: {fileID: 5898864295711336049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4641269598726034412
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898864295711236489}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.04
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.02}

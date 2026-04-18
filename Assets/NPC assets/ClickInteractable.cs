@@ -27,13 +27,14 @@ public class ClickInteractable : MonoBehaviour
 
             bool hit = Physics.Raycast(ray, out raycastHit);
 
-
+            Debug.Log(raycastHit.transform.name);
 
             if (hit)
             {
                 string[] dialogue = DialogueManager.setDialogue(raycastHit.transform.name);
                 if (dialogue != null)
                 {
+
                     ResourceManager.currentObject = raycastHit.transform.gameObject;
                     DialogueBox.SetActive(true);
                     UnityEngine.Cursor.lockState = CursorLockMode.None;

@@ -13,6 +13,9 @@ public class DialogueManager : MonoBehaviour
 
     static string[] DefaultDialogue =
      {"Nice"};
+
+    static string[] MonsterDialogue =
+     {"Its not moving","I should probably get out of here"};
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +42,8 @@ public class DialogueManager : MonoBehaviour
             case "rust_key":
                 ResourceManager.isFood = false;
                 return QuestItemDialogue;
+            case "MonsterMutant2":
+                return MonsterDialogue;
             default:
                 return null;
         }

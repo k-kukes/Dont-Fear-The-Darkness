@@ -43,4 +43,10 @@ public class PlayerController : MonoBehaviour
             rb.position = startPosition;
         }
     }
+
+    public void StopMovement()
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+    }
 }

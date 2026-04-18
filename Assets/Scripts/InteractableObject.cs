@@ -31,10 +31,6 @@ public class InteractableObject : MonoBehaviour
             if (distance <= detectionRange)
             {
                 SetHighlight(obj, true);
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    // TODO: Add interaction logic
-                }
             } else {
                 SetHighlight(obj, false);
             }

@@ -31,7 +31,7 @@ public class ClickInteractable : MonoBehaviour
 
             if (hit)
             {
-                string[] dialogue = DialogueManager.setDialogue(raycastHit.transform.name);
+                string[] dialogue = NPCDialogueManager.setDialogue(raycastHit.transform.name);
                 if (dialogue != null)
                 {
 

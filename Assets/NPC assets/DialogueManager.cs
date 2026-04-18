@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DialogueManager : MonoBehaviour
+public class NPCDialogueManager : MonoBehaviour
 {
     static string[] BodyPartDialogue =
      {"???????", "What is This ?", "Hope Thats not Human"};

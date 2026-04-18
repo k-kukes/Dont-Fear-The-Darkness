@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.UIElements;
-using Mono.Cecil;
+using UnityEngine.SceneManagement;
 public class ClickInteractable : MonoBehaviour
 {
     public Camera playerCam;
@@ -37,6 +36,8 @@ public class ClickInteractable : MonoBehaviour
                 {
                     ResourceManager.currentObject = raycastHit.transform.gameObject;
                     DialogueBox.SetActive(true);
+                    UnityEngine.Cursor.lockState = CursorLockMode.None;
+                    UnityEngine.Cursor.visible = true;
                     DialogueBox.GetComponent<Dialogue>().lines = dialogue;
                 }
             }

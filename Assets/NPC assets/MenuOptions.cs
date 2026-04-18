@@ -18,6 +18,8 @@ public class MenuOptions : MonoBehaviour
     public void exitMenu()
     {
         menu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Eat()
@@ -31,8 +33,11 @@ public class MenuOptions : MonoBehaviour
         {
             ResourceManager.reduceSanity(5);
             menu.SetActive(false);
+
         }
         ResourceManager.currentObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
     }
 
@@ -41,6 +46,8 @@ public class MenuOptions : MonoBehaviour
     {
         //add pick up logic
         menu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 }

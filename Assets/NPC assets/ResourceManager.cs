@@ -4,6 +4,7 @@ public class ResourceManager : MonoBehaviour
 {
 
     public static int Sanity = 100;
+    public static int Health = 100;
     public static bool isFood = false;
 
     public static GameObject currentObject;
@@ -29,5 +30,15 @@ public class ResourceManager : MonoBehaviour
     public static void increaseSanity(int amount)
     {
         Sanity += amount;
+    }
+
+    public static void TakeDamage(int amount)
+    {
+        Health -= amount;
+    }
+
+    public static void Heal(int amount)
+    {
+        Health += amount;
     }
 }

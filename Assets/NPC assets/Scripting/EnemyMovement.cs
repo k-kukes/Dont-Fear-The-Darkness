@@ -9,8 +9,6 @@ public class EnemyMovement : MonoBehaviour
     public float updateSpeed;
 
     private NavMeshAgent agent;
-
-    public Camera playerCam;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +32,14 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            ResourceManager.TakeDamage(10);
+        }
+    }
+
     private IEnumerator Follow()
     {
         WaitForSeconds wait = new WaitForSeconds(updateSpeed);
@@ -41,7 +47,7 @@ public class EnemyMovement : MonoBehaviour
         while (enabled)
         {
             agent.SetDestination(target.transform.position);
-            Debug.Log(agent.destination);
+           
             yield return wait;
         }
     }

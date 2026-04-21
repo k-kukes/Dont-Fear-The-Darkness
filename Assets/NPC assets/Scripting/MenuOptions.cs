@@ -26,12 +26,12 @@ public class MenuOptions : MonoBehaviour
     {
         if (ResourceManager.isFood)
         {
-            ResourceManager.increaseSanity(5);
+            ResourceManager.increaseSanity(10);
             menu.SetActive(false);
         }
         else
         {
-            ResourceManager.reduceSanity(5);
+            ResourceManager.reduceSanity(10);
             menu.SetActive(false);
 
         }

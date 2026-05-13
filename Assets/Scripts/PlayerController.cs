@@ -11,13 +11,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
         startPosition = transform.position;
     }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void FixedUpdate()
@@ -38,7 +41,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Goal"))
         {
             Debug.Log("You Win");
-        } else if (other.CompareTag("DeathPlane"))
+        }
+        else if (other.CompareTag("DeathPlane"))
         {
             rb.position = startPosition;
         }

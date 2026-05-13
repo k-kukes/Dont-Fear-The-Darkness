@@ -1,10 +1,18 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform target;
+    Transform target;
+
+    bool attack = false;
+
+    public AudioClip Roar;
+    Animator anim;
+
+    AudioSource audio;
 
     public float updateSpeed;
 
@@ -13,33 +21,51 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        target = ResourceManager.player.transform;
         StartCoroutine(Follow());
+        anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Vector3.Dot(transform.position.normalized, target.transform.forward.normalized));
-
-        if (Vector3.Dot(transform.forward.normalized, target.transform.forward.normalized) < -0.5)
+        MonsterAttack();
+        anim.SetFloat("speed", agent.speed);
+        if (agent.speed > 0)
         {
-            agent.speed = 0;
+            audio.loop = true;
         }
         else
         {
-            agent.speed = 3;
+            audio.loop = false;
         }
+
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
+            attack = true;
+
             ResourceManager.TakeDamage(10);
         }
     }
 
+    private void MonsterAttack()
+    {
+        if (attack == true)
+        {
+            agent.speed = 0;
+            audio.PlayOneShot(Roar);
+            anim.SetTrigger("monsterAttack");
+
+        }
+
+    }
     private IEnumerator Follow()
     {
         WaitForSeconds wait = new WaitForSeconds(updateSpeed);
@@ -47,8 +73,36 @@ public class EnemyMovement : MonoBehaviour
         while (enabled)
         {
             agent.SetDestination(target.transform.position);
-           
+
             yield return wait;
         }
     }
+
+    void OnDisable()
+    {
+        Debug.Log("disabled");
+        Invoke(nameof(Respawn), Random.Range(3, 8));
+    }
+
+    public void Respawn()
+    {
+        Transform spawnPoint = ResourceManager.playerCam.gameObject.transform;
+
+        transform.position = spawnPoint.position + new Vector3(1, 0, 0) * 0.01f;
+        Debug.Log(transform.position);
+        gameObject.SetActive(true);
+
+
+    }
+
+    void OnEnable()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        target = ResourceManager.player.transform;
+        StartCoroutine(Follow());
+        anim = GetComponent<Animator>();
+    }
+
+
+
 }

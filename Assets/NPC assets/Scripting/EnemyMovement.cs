@@ -62,7 +62,11 @@ public class EnemyMovement : MonoBehaviour
             agent.speed = 0;
             audio.PlayOneShot(Roar);
             anim.SetTrigger("monsterAttack");
-
+            attack = false;
+        }
+        else
+        {
+            agent.speed = 3.5f;
         }
 
     }

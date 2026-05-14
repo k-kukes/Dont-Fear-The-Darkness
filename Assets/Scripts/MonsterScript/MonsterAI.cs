@@ -46,7 +46,7 @@ public class MonsterAI : MonoBehaviour
             agent.isStopped = true;
             agent.ResetPath();
             return;
-        }
+         }
 
         if (isChasing && distanceToPlayer <= chaseRange)
         {

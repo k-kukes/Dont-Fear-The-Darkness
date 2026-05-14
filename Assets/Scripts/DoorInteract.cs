@@ -8,10 +8,10 @@ public class DoorInteract : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.T))
+        /*if (isPlayerNear && Input.GetKeyDown(KeyCode.T))
         {
-            skillCheckManager.StartSkillCheck();
-        }
+            skillCheckManager.StartSkillCheck(this);
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)

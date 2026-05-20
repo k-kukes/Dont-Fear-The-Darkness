@@ -37,6 +37,12 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     battery.Interact();
                     Debug.Log("Battery picked up!");
+
+                }
+                KeyPickup key = hit.collider.GetComponentInParent<KeyPickup>();
+                if (key != null)
+                {
+                    key.PickUp();
                 }
             }
             else

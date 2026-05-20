@@ -22,19 +22,4 @@ public class Choice : MonoBehaviour
 
     }
 
-    public  void PickUpMenu()
-    {
-
-        EatBtn.interactable = false;
-        PickUpBtn.interactable = true;
-
-    }
-
-    public void EatMenu()
-    {
-
-        EatBtn.interactable = true;
-        PickUpBtn.interactable = false;
-
-    }
 }

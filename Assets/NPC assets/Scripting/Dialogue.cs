@@ -20,9 +20,8 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
 
-        text.text = "working";
-
     }
+
 
 
     void Awake()
@@ -32,8 +31,6 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(index);
-        Debug.Log(index <= lines.Length - 1);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -58,6 +55,7 @@ public class Dialogue : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
+
         StartCoroutine(TypeLine());
 
     }
@@ -73,14 +71,14 @@ public class Dialogue : MonoBehaviour
 
     void nextLine()
     {
-        if (index <= lines.Length - 1)
+        if (index < lines.Length - 1)
         {
             index++;
             text.text = String.Empty;
             StartCoroutine(TypeLine());
         }
 
-        if (index > lines.Length - 1)
+        if (index == lines.Length - 1)
         {
             this.gameObject.SetActive(false);
             if (!ResourceManager.currentObject.transform.name.Equals("MonsterMutant2"))
@@ -98,6 +96,7 @@ public class Dialogue : MonoBehaviour
 
     void OnEnable()
     {
+        Time.timeScale = 0;
         text.text = String.Empty;
         StartDialogue();
     }

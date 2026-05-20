@@ -3,19 +3,19 @@ using UnityEngine;
 public class NPCDialogueManager : MonoBehaviour
 {
     static string[] BodyPartDialogue =
-     {"???????", "What is This ?", "Hope Thats not Human"};
+     {"You:???????", "You: What is This ?", "You: Hope Thats not Human"};
 
     static string[] FoodDialogue =
-      {"Finaly", "Something to eat"};
+      {"You:Finaly", "You: Something to eat"};
 
     static string[] QuestItemDialogue =
-     {"Hmm", "This might be useful"};
+     {"You: Hmm", "You: This might be useful"};
 
     static string[] DefaultDialogue =
-     {"Nice"};
+     {"You: Nice"};
 
     static string[] MonsterDialogue =
-     {"Its not moving","I should probably get out of here"};
+     {"You: Its not moving","You: I should probably get out of here"};
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

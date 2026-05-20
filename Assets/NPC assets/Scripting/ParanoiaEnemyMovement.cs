@@ -50,6 +50,7 @@ public class ParanoiaEnemyMovement : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             attack = true;
+            audio.PlayOneShot(Roar);
 
             ResourceManager.TakeDamage(10);
         }
@@ -60,7 +61,7 @@ public class ParanoiaEnemyMovement : MonoBehaviour
         if (attack == true)
         {
             agent.speed = 0;
-            audio.PlayOneShot(Roar);
+
             anim.SetTrigger("monsterAttack");
             Invoke(nameof(Disappear), 1.5f);
 
@@ -95,7 +96,6 @@ public class ParanoiaEnemyMovement : MonoBehaviour
         Transform spawnPoint = ResourceManager.playerCam.gameObject.transform;
 
         transform.position = spawnPoint.position + new Vector3(1, 0, 0) * 0.01f;
-        Debug.Log(transform.position);
         gameObject.SetActive(true);
 
 

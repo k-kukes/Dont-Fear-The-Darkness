@@ -27,7 +27,6 @@ public class ClickInteractable : MonoBehaviour
 
             bool hit = Physics.Raycast(ray, out raycastHit);
 
-            Debug.Log(raycastHit.transform.name);
 
             if (hit)
             {
@@ -36,10 +35,11 @@ public class ClickInteractable : MonoBehaviour
                 {
 
                     ResourceManager.currentObject = raycastHit.transform.gameObject;
+                    DialogueBox.GetComponent<Dialogue>().lines = dialogue;
                     DialogueBox.SetActive(true);
                     UnityEngine.Cursor.lockState = CursorLockMode.None;
                     UnityEngine.Cursor.visible = true;
-                    DialogueBox.GetComponent<Dialogue>().lines = dialogue;
+                    
                 }
             }
 

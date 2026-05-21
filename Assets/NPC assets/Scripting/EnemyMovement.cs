@@ -25,9 +25,11 @@ public class EnemyMovement : MonoBehaviour
         StartCoroutine(Follow());
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
-
+        this.gameObject.SetActive(false);
 
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -85,7 +87,8 @@ public class EnemyMovement : MonoBehaviour
     void OnDisable()
     {
         Debug.Log("disabled");
-        Invoke(nameof(Respawn), Random.Range(3, 8));
+        ResourceManager.Monster = this.gameObject;
+
     }
 
     public void Respawn()

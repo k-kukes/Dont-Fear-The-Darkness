@@ -10,8 +10,11 @@ public class ChestInteract : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(isPlayerNear);
+
         if (isPlayerNear && Input.GetKeyDown(KeyCode.T) && !isOpen)
         {
+            Debug.Log("open");
             if (ChestManager.instance.hasChestKey)
             {
                 skillCheckManager.StartSkillCheck(this);
@@ -34,7 +37,7 @@ public class ChestInteract : MonoBehaviour
         {
             chestAnimator.SetTrigger("Open");
         }
-
+        ResourceManager.activateMonster();
         Debug.Log("THE MONSTER IS AWAKE!");
     }
 

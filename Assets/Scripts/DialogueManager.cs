@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using StarterAssets;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,8 +13,8 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;
 
     [Header("UI")]
-    public TMP_Text dialogueText;
-    public GameObject nextButton;
+    public Text dialogueText;
+    // public GameObject nextButton;
     public GameObject choicePanel;
     public FirstPersonController playerController;
     public StarterAssetsInputs playerInputs;
@@ -110,7 +110,7 @@ public class DialogueManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        nextButton.SetActive(false);
+        // nextButton.SetActive(false);
 
         if (currentTrigger == "showChoices")
         {
@@ -136,7 +136,7 @@ public class DialogueManager : MonoBehaviour
     public void ChooseYes()
     {
         choicePanel.SetActive(false);
-        nextButton.SetActive(true);
+        // nextButton.SetActive(true);
 
         List<string> lines = new List<string>()
         {
@@ -150,7 +150,7 @@ public class DialogueManager : MonoBehaviour
     public void ChooseNo()
     {
         choicePanel.SetActive(false);
-        nextButton.SetActive(true);
+        // nextButton.SetActive(true);
 
         List<string> lines = new List<string>()
         {

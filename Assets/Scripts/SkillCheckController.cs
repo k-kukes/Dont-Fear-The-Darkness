@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 
 public class SkillCheckController : MonoBehaviour
 {
@@ -16,6 +16,8 @@ public class SkillCheckController : MonoBehaviour
     private bool isActive = false;
     private int currentAttempts;
 
+    private ChestInteract currentChest;
+
     void Start()
     {
         skillCheckUI.SetActive(false);
@@ -23,23 +25,20 @@ public class SkillCheckController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartSkillCheck();
-        }
 
         if (!isActive) return;
 
         needle.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.V)) 
+        if (Input.GetKeyDown(KeyCode.V))
         {
             CheckSuccess();
         }
     }
 
-    public void StartSkillCheck()
+    public void StartSkillCheck(ChestInteract chest)
     {
+        currentChest = chest;
         isActive = true;
         currentAttempts = maxAttempts;
         skillCheckUI.SetActive(true);
@@ -63,6 +62,9 @@ public class SkillCheckController : MonoBehaviour
             Debug.Log("Skill Check Success!");
             instructionText.text = "SUCCESS!";
             needleImg.color = Color.green;
+
+            if (currentChest != null) currentChest.OpenChest();
+
             Invoke("CloseSkillCheck", 1f);
         }
         else

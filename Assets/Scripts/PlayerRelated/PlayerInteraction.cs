@@ -17,10 +17,8 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         // Right click
-
-        if (Input.GetKeyDown(KeyCode.Mouse1))   
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-           
             Debug.DrawRay(playerCamera.transform.position,
                          playerCamera.transform.forward * interactDistance,
                          Color.red, 2f);
@@ -38,10 +36,17 @@ public class PlayerInteraction : MonoBehaviour
                     battery.Interact();
                     Debug.Log("Battery picked up!");
                 }
+
+                KeyPickup key = hit.collider.GetComponent<KeyPickup>();
+                if (key != null)
+                {
+                    key.PickUp();
+                    Debug.Log("Key picked up!");
+                }
             }
             else
             {
-                Debug.Log("Raycast hit NOTHING - move closer or look directly at battery");
+                Debug.Log("Raycast hit NOTHING - move closer or look directly at object");
             }
         }
     }

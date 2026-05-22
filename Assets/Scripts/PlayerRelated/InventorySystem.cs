@@ -14,9 +14,12 @@ public class InventorySystem : MonoBehaviour
 
     public void CombineBatteryWithFlashlight()
     {
+
         Debug.Log("Combine called - checking...");
+
         if (hasFlashlight && batteryCount >= 1 && !flashlightActivated)
         {
+            ResourceManager.AddBattery();
             batteryCount--;
             flashlightActivated = true;
 
@@ -24,7 +27,14 @@ public class InventorySystem : MonoBehaviour
         }
         else
         {
+            if (hasFlashlight && batteryCount >= 1)
+            {
+                ResourceManager.AddBattery();
+                batteryCount--;
+            }
             Debug.Log("Combine failed. Batteries = " + batteryCount + " | Already activated = " + flashlightActivated);
         }
+
+
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    public Text text;
+    public TextMeshProUGUI text;
     public float speed;
 
     public string[] lines;

@@ -13,11 +13,11 @@ public class InventoryUIController : MonoBehaviour
     void Start()
     {
         inventory = FindFirstObjectByType<InventorySystem>();
-        
+
         if (inventoryPanel != null)
             inventoryPanel.SetActive(false);
 
-        UpdateInventoryUI(); 
+        UpdateInventoryUI();
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class InventoryUIController : MonoBehaviour
             if (inventoryPanel != null)
             {
                 inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-                
+
                 if (inventoryPanel.activeSelf)
                 {
                     UpdateInventoryUI();
@@ -43,7 +43,7 @@ public class InventoryUIController : MonoBehaviour
                 inventory.CombineBatteryWithFlashlight();
             }
 
-            UpdateInventoryUI(); 
+            UpdateInventoryUI();
         }
     }
 
@@ -61,10 +61,16 @@ public class InventoryUIController : MonoBehaviour
             batteryImage.enabled = (inventory.batteryCount > 0);
         }
 
-        if (ChestManager.instance.hasChestKey) {
-            keyImage.enabled = true;
-        } else {
-            keyImage.enabled = false;
+        if (ChestManager.instance != null)
+        {
+            if (ChestManager.instance.hasChestKey)
+            {
+                keyImage.enabled = true;
+            }
+            else
+            {
+                keyImage.enabled = false;
+            }
         }
     }
 }

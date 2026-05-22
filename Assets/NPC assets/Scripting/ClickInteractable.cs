@@ -33,7 +33,7 @@ public class ClickInteractable : MonoBehaviour
                 string[] dialogue = NPCDialogueManager.setDialogue(raycastHit.transform.name);
                 if (dialogue != null)
                 {
-
+                    
                     ResourceManager.currentObject = raycastHit.transform.gameObject;
                     DialogueBox.GetComponent<Dialogue>().lines = dialogue;
                     DialogueBox.SetActive(true);

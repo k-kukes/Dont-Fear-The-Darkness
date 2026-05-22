@@ -3,19 +3,22 @@ using UnityEngine;
 public class NPCDialogueManager : MonoBehaviour
 {
     static string[] BodyPartDialogue =
-     {"You:???????", "You: What is This ?", "You: Hope Thats not Human"};
+     {"[Player]:???????", "[Player]: What is This ?", "[Player]: Hope Thats not Human"};
 
     static string[] FoodDialogue =
-      {"You:Finaly", "You: Something to eat"};
+      {"[Player]:Finaly", "You: Something to eat"};
 
     static string[] QuestItemDialogue =
-     {"You: Hmm", "You: This might be useful"};
+     {"[Player]: Hmm", "[Player]:This might be useful"};
 
     static string[] DefaultDialogue =
-     {"You: Nice"};
+     {"[Player]: Nice"};
 
     static string[] MonsterDialogue =
-     {"You: Its not moving","You: I should probably get out of here"};
+     {"[Player]: Its not moving","[Player]: I should probably get out of here"};
+
+    static string[] ForestExplorer =
+    {"[Explorer]: Welcome Traveler", "[Player]: Who are you?","[Explorer]: Thats not important", "[Explorer]: Take this", "   (He hands you a key)","[Explorer]: If your going to find Alice you'll need it","[Player]: Wait how do you know about Alice !??","   (The man has gone silent)" };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,6 +47,9 @@ public class NPCDialogueManager : MonoBehaviour
                 return QuestItemDialogue;
             case "MonsterMutant2":
                 return MonsterDialogue;
+            case "ForestExplorer":
+                ChestManager.instance.hasChestKey = true;
+                return ForestExplorer;
             default:
                 return null;
         }

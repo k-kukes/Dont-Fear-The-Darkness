@@ -71,17 +71,19 @@ public class Dialogue : MonoBehaviour
 
     void nextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < lines.Length)
         {
             index++;
             text.text = String.Empty;
             StartCoroutine(TypeLine());
         }
 
-        if (index == lines.Length - 1)
+        if (index == lines.Length)
         {
             this.gameObject.SetActive(false);
-            if (!ResourceManager.currentObject.transform.name.Equals("MonsterMutant2"))
+            string objectName = ResourceManager.currentObject.transform.name;
+
+            if (!objectName.Equals("ForestExplorer"))
             {
                 OptionsMenu.SetActive(true);
             }
@@ -89,6 +91,7 @@ public class Dialogue : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                Time.timeScale = 1;
             }
         }
 

@@ -6,7 +6,5 @@ public class KeyPickup : MonoBehaviour
     {
         ChestManager.instance.hasChestKey = true;
         Debug.Log("Key Acquired via Raycast!");
-
-        Destroy(gameObject);
     }
 }

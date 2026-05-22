@@ -1,5 +1,6 @@
 using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class ResourceManager : MonoBehaviour
     void Update()
     {
 
+
     }
 
     public static void AddBattery()
@@ -42,9 +44,14 @@ public class ResourceManager : MonoBehaviour
 
     public static void reduceSanity(int amount)
     {
-        if (Sanity > 0)
+        if (Sanity > -10)
         {
             Sanity -= amount;
+        }
+
+        if (Sanity <= -1)
+        {
+            SceneManager.LoadScene("LoseScreen");
         }
     }
 

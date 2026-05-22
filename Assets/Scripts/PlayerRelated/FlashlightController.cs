@@ -74,6 +74,8 @@ public class FlashlightController : MonoBehaviour
 
     void drainBattery()
     {
+         ResourceManager.increaseSanity(1);
+
         ResourceManager.DrainPower();
 
     }

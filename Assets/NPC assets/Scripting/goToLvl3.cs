@@ -23,7 +23,7 @@ public class goToLvl3 : MonoBehaviour
 
     public void checkCode()
     {
-        if (code.text == "123")
+        if (code.text.Equals("black"))
         {
             SceneManager.LoadScene("MainMenu");
         }

@@ -12,13 +12,13 @@ public class NPCDialogueManager : MonoBehaviour
     {"To whom it may concern", "Proceed with caution as the darkness in this cave will drive even the bravest man mad", " My fate is sealed so I have left you the last of my belongings", "a single battery", "There may be others in this cave", "Find the clues and the door","and you may have hope of escape"};
 
     static string[] Note3 =
-    {"Note 3 Hint"};
+    {"I lie between the stars and in the deepest earth beneath."};
 
     static string[] Note4 =
-    {"Note 4 Hint"};
+    {"I am the hearts of murderers and the maw behind the teeth."};
 
     static string[] Note5 =
-    {"Note 5 Hint"};
+    {"I am all that will come after and all that came before."};
     static string[] ExitLvl2 =
     {"Enter The code to exit"};
 

@@ -15,7 +15,7 @@ public class Dialogue : MonoBehaviour
     private int index;
 
     public GameObject OptionsMenu;
-
+    public GameObject passwordMenu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -84,9 +84,13 @@ public class Dialogue : MonoBehaviour
             string objectName = ResourceManager.currentObject.transform.name;
 
 
-            if (objectName.Equals("FoodDialogue") || objectName.Equals("BodyPartDialogue")  )
+            if (objectName.Equals("FoodDialogue") || objectName.Equals("BodyPartDialogue"))
             {
                 OptionsMenu.SetActive(true);
+            }
+            else if (objectName.Equals("Exit"))
+            {
+                passwordMenu.SetActive(true);
             }
             else
             {
@@ -95,7 +99,7 @@ public class Dialogue : MonoBehaviour
                 Time.timeScale = 1;
             }
 
-            if(objectName.Equals("Note#1"))
+            if (objectName.Equals("Note#1"))
             {
                 ResourceManager.activateMonster();
             }

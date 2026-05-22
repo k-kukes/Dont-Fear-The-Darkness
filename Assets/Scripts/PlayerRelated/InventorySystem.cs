@@ -19,6 +19,7 @@ public class InventorySystem : MonoBehaviour
         {
             batteryCount--;
             flashlightActivated = true;
+            ResourceManager.AddBattery();
             Debug.Log(" FLASHLIGHT ACTIVATED! Press F to turn it on");
         }
         else

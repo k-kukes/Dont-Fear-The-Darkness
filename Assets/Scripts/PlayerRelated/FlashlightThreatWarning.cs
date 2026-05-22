@@ -3,7 +3,7 @@ using UnityEngine;
 public class FlashlightThreatWarning : MonoBehaviour
 {
     public FlashlightController flashlight;
-    public AudioClip growlClip;           
+    public AudioClip growlClip;
     public float stillTimeRequired = 4f;
 
     private AudioSource audioSource;      // will auto-find
@@ -18,7 +18,7 @@ public class FlashlightThreatWarning : MonoBehaviour
 
         if (audioSource == null)
         {
-            Debug.LogError( "No AudioSource found on Player! Add one.");
+            Debug.LogError("No AudioSource found on Player! Add one.");
         }
         else
         {
@@ -34,7 +34,7 @@ public class FlashlightThreatWarning : MonoBehaviour
 
         float movedDistance = Vector3.Distance(transform.position, lastPosition);
 
-        if (flashlight.IsFlashlightOn() && movedDistance < 0.02f)
+        if (FlashlightController.IsFlashlightOn() && movedDistance < 0.02f)
         {
             stillTimer += Time.deltaTime;
 

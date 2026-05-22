@@ -3,6 +3,7 @@ using UnityEngine;
 public class MenuOptions : MonoBehaviour
 {
     public GameObject menu;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,7 +13,7 @@ public class MenuOptions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void exitMenu()

@@ -8,6 +8,7 @@ public class ResourceManager : MonoBehaviour
     public static Camera playerCam;
     public static int Sanity = 100;
     public static int Health = 100;
+    public static int FlashlightPower = 0;
     public static bool isFood = false;
 
     public static GameObject currentObject;
@@ -24,6 +25,16 @@ public class ResourceManager : MonoBehaviour
 
     }
 
+    public static void AddBattery()
+    {
+        FlashlightPower += 50;
+    }
+
+    public static void DrainPower()
+    {
+        FlashlightPower -= 1;
+    }
+
     public static void activateMonster()
     {
         Monster.SetActive(true);
@@ -31,12 +42,18 @@ public class ResourceManager : MonoBehaviour
 
     public static void reduceSanity(int amount)
     {
-        Sanity -= amount;
+        if (Sanity > 0)
+        {
+            Sanity -= amount;
+        }
     }
 
     public static void increaseSanity(int amount)
     {
-        Sanity += amount;
+        if (Sanity < 100)
+        {
+            Sanity += amount;
+        }
     }
 
     public static void TakeDamage(int amount)

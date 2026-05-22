@@ -19,9 +19,9 @@ public class goToLvl2 : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Going to Lvl 2");
-        if (other.CompareTag("Player")&& ChestManager.instance.ChestOpened)
+        if (other.CompareTag("Player") && ChestManager.instance.ChestOpened)
         {
-            SceneManager.LoadScene("level2");
+            SceneManager.LoadScene("Level-2");
         }
     }
 }

@@ -30,7 +30,7 @@ public class MonsterAI : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (flashlightController.IsFlashlightOn())
+        if (FlashlightController.IsFlashlightOn())
         {
             flashlightTimer += Time.deltaTime;
 

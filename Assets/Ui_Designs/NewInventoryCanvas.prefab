@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: 'Batteries: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
-  m_sharedMaterial: {fileID: 256719968147355859, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
+  m_sharedMaterial: {fileID: 6284482140015237325, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -386,7 +386,7 @@ MonoBehaviour:
     Press C while open to combine battery'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
-  m_sharedMaterial: {fileID: 256719968147355859, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
+  m_sharedMaterial: {fileID: 6284482140015237325, guid: 522268afb93fa534484edbe06795cfbe, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

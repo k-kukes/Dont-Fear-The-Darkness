@@ -4,6 +4,24 @@ public class NPCDialogueManager : MonoBehaviour
 {
     static string[] BodyPartDialogue =
      {"[Player]:???????", "[Player]: What is This ?", "[Player]: Hope Thats not Human"};
+    static string[] TooDark =
+    {"[Player]: The Cave is too dark I need more light to see this"};
+
+
+    static string[] Note2 =
+    {"To whom it may concern", "Proceed with caution as the darkness in this cave will drive even the bravest man mad", " My fate is sealed so I have left you the last of my belongings", "a single battery", "There may be others in this cave", "Find the clues and the door","and you may have hope of escape"};
+
+    static string[] Note3 =
+    {"Note 3 Hint"};
+
+    static string[] Note4 =
+    {"Note 4 Hint"};
+
+    static string[] Note5 =
+    {"Note 5 Hint"};
+    static string[] ExitLvl2 =
+    {"Enter The code to exit"};
+
 
     static string[] Note1 =
     {"Story text: ...", "Go to the Cabin ...", "The trap door will lead you to the tunnel", "Be careful there is  a monster"};
@@ -53,7 +71,31 @@ public class NPCDialogueManager : MonoBehaviour
                 ChestManager.instance.hasChestKey = true;
                 return ForestExplorer;
             case "Note#1":
+
                 return Note1;
+            case "Note-2":
+
+                    return Note2;
+            case "Note-3":
+                if (FlashlightController.IsFlashlightOn())
+                {
+                    return Note3;
+                }
+                return TooDark;
+            case "Note-4":
+                if (FlashlightController.IsFlashlightOn())
+                {
+                    return Note4;
+                }
+                return TooDark;
+             case "Note-5":
+                if (FlashlightController.IsFlashlightOn())
+                {
+                    return Note5;
+                }
+                return TooDark;
+            case "Exit":
+                return ExitLvl2;
             default:
                 return null;
         }

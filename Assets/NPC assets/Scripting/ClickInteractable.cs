@@ -30,16 +30,17 @@ public class ClickInteractable : MonoBehaviour
 
             if (hit)
             {
+                Debug.Log(raycastHit.transform.name);
                 string[] dialogue = NPCDialogueManager.setDialogue(raycastHit.transform.name);
                 if (dialogue != null)
                 {
-                    
+
                     ResourceManager.currentObject = raycastHit.transform.gameObject;
                     DialogueBox.GetComponent<Dialogue>().lines = dialogue;
                     DialogueBox.SetActive(true);
                     UnityEngine.Cursor.lockState = CursorLockMode.None;
                     UnityEngine.Cursor.visible = true;
-                    
+
                 }
             }
 

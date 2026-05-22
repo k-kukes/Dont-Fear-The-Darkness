@@ -43,6 +43,11 @@ public class PlayerInteraction : MonoBehaviour
                     key.PickUp();
                     Debug.Log("Key picked up!");
                 }
+                KeypadManager vault = hit.collider.GetComponent<KeypadManager>();
+                if (vault != null)
+                {
+                    vault.TurnOnKeypad();
+                }
             }
             else
             {

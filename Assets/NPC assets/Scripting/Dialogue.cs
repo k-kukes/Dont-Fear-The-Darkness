@@ -83,7 +83,8 @@ public class Dialogue : MonoBehaviour
             this.gameObject.SetActive(false);
             string objectName = ResourceManager.currentObject.transform.name;
 
-            if (!objectName.Equals("ForestExplorer"))
+
+            if (objectName.Equals("FoodDialogue") || objectName.Equals("BodyPartDialogue")  )
             {
                 OptionsMenu.SetActive(true);
             }
@@ -92,6 +93,11 @@ public class Dialogue : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 Time.timeScale = 1;
+            }
+
+            if(objectName.Equals("Note#1"))
+            {
+                ResourceManager.activateMonster();
             }
         }
 

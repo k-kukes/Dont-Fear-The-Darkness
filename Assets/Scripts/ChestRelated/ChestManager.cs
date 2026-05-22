@@ -6,6 +6,7 @@ public class ChestManager : MonoBehaviour
 
     public bool hasChestKey = false;
 
+    public bool ChestOpened = false;
     void Awake()
     {
         if (instance == null) instance = this;

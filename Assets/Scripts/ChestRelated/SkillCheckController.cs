@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Security.Cryptography.X509Certificates;
 
 public class SkillCheckController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SkillCheckController : MonoBehaviour
     public RectTransform needle;
     public RectTransform targetZone;
     public TextMeshProUGUI instructionText;
+
+    public GameObject note;
 
     public float rotationSpeed = 150f;
     public float successThreshold = 27f;
@@ -62,9 +65,9 @@ public class SkillCheckController : MonoBehaviour
             Debug.Log("Skill Check Success!");
             instructionText.text = "SUCCESS!";
             needleImg.color = Color.green;
-
+            note.SetActive(true);
             if (currentChest != null) currentChest.OpenChest();
-
+            ChestManager.instance.ChestOpened = true;
             Invoke("CloseSkillCheck", 1f);
         }
         else

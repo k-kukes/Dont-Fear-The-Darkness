@@ -37,8 +37,7 @@ public class ChestInteract : MonoBehaviour
         {
             chestAnimator.SetTrigger("Open");
         }
-        ResourceManager.activateMonster();
-        Debug.Log("THE MONSTER IS AWAKE!");
+
     }
 
     private void OnTriggerEnter(Collider other)

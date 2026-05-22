@@ -5,8 +5,10 @@ public class NPCDialogueManager : MonoBehaviour
     static string[] BodyPartDialogue =
      {"[Player]:???????", "[Player]: What is This ?", "[Player]: Hope Thats not Human"};
 
+    static string[] Note1 =
+    {"Story text: ...", "Go to the Cabin ...", "The trap door will lead you to the tunnel", "Be careful there is  a monster"};
     static string[] FoodDialogue =
-      {"[Player]:Finaly", "You: Something to eat"};
+      {"[Player]:Finaly", "[Player]: Something to eat"};
 
     static string[] QuestItemDialogue =
      {"[Player]: Hmm", "[Player]:This might be useful"};
@@ -18,7 +20,7 @@ public class NPCDialogueManager : MonoBehaviour
      {"[Player]: Its not moving","[Player]: I should probably get out of here"};
 
     static string[] ForestExplorer =
-    {"[Explorer]: Welcome Traveler", "[Player]: Who are you?","[Explorer]: Thats not important", "[Explorer]: Take this", "   (He hands you a key)","[Explorer]: If your going to find Alice you'll need it","[Player]: Wait how do you know about Alice !??","   (The man has gone silent)" };
+    {"[Explorer]: Welcome Traveler", "[Player]: Who are you?","[Explorer]: Thats not important", "[Explorer]: Take this", "   (He hands you a key)","[Explorer]: If your going to find Alice you'll need it","[Explorer]: Go to the top of the hill you will find more there","[Player]: Wait how do you know about Alice !??","   (The man has gone silent)" };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,6 +52,8 @@ public class NPCDialogueManager : MonoBehaviour
             case "ForestExplorer":
                 ChestManager.instance.hasChestKey = true;
                 return ForestExplorer;
+            case "Note#1":
+                return Note1;
             default:
                 return null;
         }

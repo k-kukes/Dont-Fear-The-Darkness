@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
     Transform target;
 
     bool attack = false;
+    public RawImage scareImage;
 
     public AudioClip Roar;
     Animator anim;
@@ -19,13 +21,13 @@ public class EnemyMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        scareImage.enabled = false;
         agent = GetComponent<NavMeshAgent>();
         target = ResourceManager.player.transform;
         StartCoroutine(Follow());
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         this.gameObject.SetActive(false);
-
     }
 
 
@@ -64,6 +66,8 @@ public class EnemyMovement : MonoBehaviour
             audio.PlayOneShot(Roar);
             anim.SetTrigger("monsterAttack");
             attack = false;
+            // the scare effect screen
+            scareImage.enabled = true;
         }
         else
         {

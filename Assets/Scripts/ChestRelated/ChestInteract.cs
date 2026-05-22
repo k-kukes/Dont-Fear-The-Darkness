@@ -10,7 +10,7 @@ public class ChestInteract : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isPlayerNear);
+        // Debug.Log(isPlayerNear);
 
         if (isPlayerNear && Input.GetKeyDown(KeyCode.T) && !isOpen)
         {
@@ -32,7 +32,7 @@ public class ChestInteract : MonoBehaviour
         isOpen = true;
 
         Debug.Log("Skill Check Won");
-
+        ChestManager.instance.hasChestKey = false;
         if (chestAnimator != null)
         {
             chestAnimator.SetTrigger("Open");

@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - CinemachineTarget
   - Monster
+  - Key
   layers:
   - Default
   - TransparentFX

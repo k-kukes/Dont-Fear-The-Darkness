@@ -5,29 +5,43 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth = 100f;
-    public float maxRedAlpha = 0.7f;
-    
-    public CanvasGroup bloodOverlayGroup; 
+    public Slider healthSlider;
+    public CanvasGroup bloodOverlayGroup;
+    public GameObject gameOverPanel;
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.K)) {
-            TakeDamage(10);
+        currentHealth = maxHealth;
+
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
         }
 
-        ApplyVisuals();
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth = Mathf.Max(currentHealth - amount, 0);
+
+        if (healthSlider != null)
+            healthSlider.value = currentHealth;
+
+        if (bloodOverlayGroup != null)
+            bloodOverlayGroup.alpha = 1f - (currentHealth / maxHealth);
+
+        if (currentHealth <= 0)
+            Die();
     }
 
-    void ApplyVisuals()
+    void Die()
     {
-        float hurtFactor = 1f - (currentHealth / maxHealth);
-        
-        float targetAlpha = Mathf.InverseLerp(0.35f, 1f, hurtFactor) * maxRedAlpha;
-        bloodOverlayGroup.alpha = targetAlpha;
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }

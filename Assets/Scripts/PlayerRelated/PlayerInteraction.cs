@@ -44,6 +44,11 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     key.PickUp();
                 }
+                WeaponPickup weapon = hit.collider.GetComponentInParent<WeaponPickup>();
+                if (weapon != null)
+                {
+                    weapon.Interact();
+                }
             }
             else
             {

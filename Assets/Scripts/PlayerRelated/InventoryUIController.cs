@@ -65,11 +65,15 @@ public class InventoryUIController : MonoBehaviour
         {
             if (ChestManager.instance.hasChestKey)
             {
-                keyImage.enabled = true;
+                if (keyImage != null) {
+                    keyImage.enabled = true;
+                }
             }
             else
             {
-                keyImage.enabled = false;
+                if (keyImage != null) {
+                    keyImage.enabled = false;
+                }
             }
         }
     }
